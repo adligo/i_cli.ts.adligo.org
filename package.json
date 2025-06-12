@@ -11,6 +11,10 @@
   "lockfileVersion": 3,
   "main": "./dist/i_cli",
   "name": "@ts.adligo.org/i_cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adligo/i_cli.ts.adligo.org.git"
+  },
   "scripts": {
     "tests": "echo See cli_tests.ts.adligo.org",
     "build": "tsc && slink -p",
