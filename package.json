@@ -1,0 +1,24 @@
+{
+  "author": "Scott Morgan",
+  "bin": {
+    "i_io.mjs": "./dist/i_cli.mjs",
+    "i_io.mts": "./src/i_cli.mts"
+  },
+  "description": "This project contains command line interface (aka CLI) Typescript interfaces.",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "lockfileVersion": 3,
+  "main": "./dist/i_cli",
+  "name": "@ts.adligo.org/i_cli",
+  "scripts": {
+    "tests": "echo See cli_tests.ts.adligo.org",
+    "build": "tsc && slink -p",
+    "tsc": "tsc"
+  },
+  "sharedNodeModuleProjectSLinkEnvVar": ["CLI_NODE_MODULE_SLINK"],
+  "sharedNodeModuleProjectSLinks": ["fab_group_deps.ts.adligo.org"],
+  "type": "module",
+  "types": "src/i_cli.mts",
+  "version": "0.0.1"
+}
