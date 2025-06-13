@@ -154,9 +154,19 @@ export interface I_CliOption {
  */
 export interface I_CliOptions {
   /**
-   * The key in this map is the long name of the argument or parameter
+   * get all the option long names
    */
-  getOptions(): Map<string,I_CliOption[]>;
+  getOptions(): Set<string>;
+  
+  /**
+   * get the option with long name
+   */
+  getOption(name: string): I_CliOption | undefined;
+
+  /**
+   * check if the option with the long name exists in this collection of options
+   */
+  hasOption(name: string): boolean;
 }
 
 /**
@@ -186,7 +196,7 @@ export interface I_FsCtx {
   /**
    * Copies a file
    */
-  copyFileSync(src: PathOrFileDescriptor, dest: PathOrFileDescriptor): void;
+  copyFileSync(src: PathLike, dest: PathLike): void;
 
   /**
    * @param path the OS dependent absolute path
@@ -219,7 +229,7 @@ export interface I_FsCtx {
    * Reads a file
    */
   readFileSync(path: PathOrFileDescriptor, options?: {
-    encoding?: null | undefined;
+    encoding?: BufferEncoding | undefined;
     flag?: string | undefined;
   } | null): string | undefined;
 }
