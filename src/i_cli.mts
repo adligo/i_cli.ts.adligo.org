@@ -25,7 +25,7 @@
   */
 import { I_Log, I_LogCtx, I_Console, I_LogConfig, LogLevel } from
   '@ts.adligo.org/i_log2/dist/i_log2.mjs';
-import {PathLike, PathOrFileDescriptor, WriteFileOptions} from 'fs';
+import { PathLike, PathOrFileDescriptor, WriteFileOptions } from 'fs';
 /**
 * The CliOption enum represents the types of command line arguments or parameters that 
 * can be passed to a i_cli command line program.  
@@ -63,7 +63,7 @@ export enum CliOptionType {
 export interface I_CliCtx extends I_CliOptions, I_Console, I_LogCtx, I_PathFsCtx, I_Process {
 
 
-  
+
   /**
    * return the current command 
    */
@@ -72,7 +72,7 @@ export interface I_CliCtx extends I_CliOptions, I_Console, I_LogCtx, I_PathFsCtx
    * return the current working directory from the start of the process
    */
   getCwd(): I_Path;
-  
+
   /**
    * returns the value associated with this key in the cli arguments
    */
@@ -85,8 +85,8 @@ export interface I_CliCtx extends I_CliOptions, I_Console, I_LogCtx, I_PathFsCtx
    * If this context has the key which specifies a value, or not
    */
   hasKey(key: I_CliOption): boolean;
-  
-  
+
+
 
 }
 
@@ -157,7 +157,7 @@ export interface I_CliOptions {
    * get all the option long names
    */
   getOptions(): Set<string>;
-  
+
   /**
    * get the option with long name
    */
@@ -240,9 +240,9 @@ export interface I_FsCtx {
  */
 export interface I_PathFsCtx {
   /**
-     * This determines if a path (folder or file) exists.
-     * @param path
-     */
+   * This determines if a path (folder or file) exists.
+   * @param path
+   */
   existsAbs(path: I_Path): boolean;
 
   /**
